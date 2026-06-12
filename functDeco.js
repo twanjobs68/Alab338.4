@@ -24,25 +24,32 @@
 // console.log(oFunction);
 
 
-function logExecution(fn) {
+// function logExecution(fn) {
 
-   //This is the inner function -closure 
-    return function () {
+//    //This is the inner function -closure 
+//     return function () {
 
-        console.log("Calling the function " + fn.name);
+//         console.log("Calling the function " + fn.name);
 
-        let outResult = fn();
+//         let outResult = fn();
 
-        console.log("Function " + fn.name + " return " + outResult);
+//         console.log("Function " + fn.name + " return " + outResult);
 
-        return outResult;
-    };
+//         return outResult;
+//     };
+// }
+
+// function nextHello() {
+//     return "Hello!";
+// }
+
+// let loggedNextHello = logExecution(nextHello);
+
+// loggedNextHello();
+
+function add(a,b){
+    return a+b;
 }
 
-function nextHello() {
-    return "Hello!";
-}
-
-let loggedNextHello = logExecution(nextHello);
-
-loggedNextHello();
+let addNum = add(10,1);
+console.log(addNum);
