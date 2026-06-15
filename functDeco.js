@@ -89,23 +89,43 @@
 
 //Task 2 Generators and Iterators
 
-function* evenNumbers(){
+// function* evenNumbers(){
 
-    let myNum = 0;
+//     let myNum = 0;
 
-    while(true) {
-        yield myNum;
-        myNum += 2;
+//     while(true) {
+//         yield myNum;
+//         myNum += 2;
+//     }
+// }
+
+// //Iterator
+// const evenIter = evenNumbers();
+
+// //log first 5 even numbers
+
+// console.log(evenIter.next().value);
+// console.log(evenIter.next().value);
+// console.log(evenIter.next().value);
+// console.log(evenIter.next().value);
+// console.log(evenIter.next().value);
+
+//create generator function that logs ID numbers 4 times
+function* idGenerator() {
+    let myId = 1;
+
+    while (true) {
+        yield myId;
+        myId++;
     }
 }
+const idIter = idGenerator();
 
-//Iterator
-const evenIter = evenNumbers();
+console.log(idIter.next().value);
+console.log(idIter.next().value);
+console.log(idIter.next().value);
+console.log(idIter.next().value);
 
-//log first 5 even numbers
+//Task 3 Asynchronous Programming(Callbacks, Promises, Async/Await)
 
-console.log(evenIter.next().value);
-console.log(evenIter.next().value);
-console.log(evenIter.next().value);
-console.log(evenIter.next().value);
-console.log(evenIter.next().value);
+
