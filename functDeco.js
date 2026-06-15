@@ -56,35 +56,56 @@
 // let addNum = add(10,1);
 // console.log(addNum);
 
-function logExecution(fn) {
-    return function (...args) {
-        console.log("Calling the function " + fn.name);
+// function logExecution(fn) {
+//     return function (...args) {
+//         console.log("Calling the function " + fn.name);
 
-        let outResult = fn(...args);
+//         let outResult = fn(...args);
 
-        console.log("Function " + fn.name + " return " + outResult);
+//         console.log("Function " + fn.name + " return " + outResult);
 
-        return outResult;
-    };
-}
+//         return outResult;
+//     };
+// }
 
-function addNum(a, b) {
-    return a + b;
-}
+// function addNum(a, b) {
+//     return a + b;
+// }
 
-function multNum(c,d){
-    return c * d;
-}
+// function multNum(c,d){
+//     return c * d;
+// }
 
 //Creat decorated version
-const wrappedAdd = logExecution(addNum);
-const wrappedMult = logExecution(multNum);
+// const wrappedAdd = logExecution(addNum);
+// const wrappedMult = logExecution(multNum);
 
-//call function
-//let theResult = wrappedAdd(9,10);
-wrappedAdd(9,10);
-wrappedMult(7,4);
+// //call function
+// //let theResult = wrappedAdd(9,10);
+// wrappedAdd(9,10);
+// wrappedMult(7,4);
 //console.log(`The result of calling the decorated function is ${theResult}.`);
 //console.log(`Calling multNum function results in ${multResult}.`)
 
 //Task 2 Generators and Iterators
+
+function* evenNumbers(){
+
+    let myNum = 0;
+
+    while(true) {
+        yield myNum;
+        myNum += 2;
+    }
+}
+
+//Iterator
+const evenIter = evenNumbers();
+
+//log first 5 even numbers
+
+console.log(evenIter.next().value);
+console.log(evenIter.next().value);
+console.log(evenIter.next().value);
+console.log(evenIter.next().value);
+console.log(evenIter.next().value);
