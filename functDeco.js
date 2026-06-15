@@ -57,10 +57,10 @@
 // console.log(addNum);
 
 function logExecution(fn) {
-    return function (c,d) {
+    return function (...args) {
         console.log("Calling the function " + fn.name);
 
-        let outResult = fn(c,d);
+        let outResult = fn(...args);
 
         console.log("Function " + fn.name + " return " + outResult);
 
@@ -77,12 +77,14 @@ function multNum(c,d){
 }
 
 //Creat decorated version
-
-// const wrappedAdd = logExecution(addNum);
+const wrappedAdd = logExecution(addNum);
 const wrappedMult = logExecution(multNum);
 
 //call function
-// let theResult = wrappedAdd(9,10);
-let multResult = wrappedMult(7,4);
+//let theResult = wrappedAdd(9,10);
+wrappedAdd(9,10);
+wrappedMult(7,4);
 //console.log(`The result of calling the decorated function is ${theResult}.`);
-console.log(`Calling multNum function results in ${multResult}.`)
+//console.log(`Calling multNum function results in ${multResult}.`)
+
+//Task 2 Generators and Iterators
