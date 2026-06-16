@@ -111,21 +111,52 @@
 // console.log(evenIter.next().value);
 
 //create generator function that logs ID numbers 4 times
-function* idGenerator() {
-    let myId = 1;
+// function* idGenerator() {
+//     let myId = 1;
 
-    while (true) {
-        yield myId;
-        myId++;
-    }
-}
-const idIter = idGenerator();
+//     while (true) {
+//         yield myId;
+//         myId++;
+//     }
+// }
+// const idIter = idGenerator();
 
-console.log(idIter.next().value);
-console.log(idIter.next().value);
-console.log(idIter.next().value);
-console.log(idIter.next().value);
+// console.log(idIter.next().value);
+// console.log(idIter.next().value);
+// console.log(idIter.next().value);
+// console.log(idIter.next().value);
 
 //Task 3 Asynchronous Programming(Callbacks, Promises, Async/Await)
+/*Write a function fetchData() that returns a new Promise. Inside the promise executor, 
+use setTimeout to simulate a delay (e.g., 1 second). After the timeout, resolve the 
+promise with some data, for example an object or simple value like "Hello World" or 
+{ success: true }. (In a real scenario this could be data fetched from a server, but 
+ here we will just simulate.)*/
 
+function fetchData() {
 
+    return new Promise(function(resolve, reject) {
+        setTimeout(function () {
+
+            resolve("Hello World!");
+        }, 1000);
+    });
+}
+
+// fetchData().then(function (resultOut) {
+//     console.log("Promise resolved by output:" +resultOut + ".");
+// })
+// .catch(function (error) {
+//     console.log("Promise rejected with the following: + error");
+// });
+ 
+async function getData() {
+    try {
+        let resultOut = await fetchData();
+        console.log("Promise resolved displaying data: " + resultOut + ".");
+    }catch (error) {
+        console.log("The error displayed is:" + error);
+    }
+}
+
+getData();
